@@ -16,6 +16,13 @@ function main() {
           }
         }
       });
+    /* Flexslider
+  -----------------------------------------------*/
+
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
+
 
 
     $('body').scrollspy({ 

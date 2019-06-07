@@ -24,18 +24,19 @@ Auth::routes(['verify' => true]);
 
 Route::get('/projects/create', 'ProjectController@create')->middleware('verified');
 Route::post('/projects', 'ProjectController@store');
-Route::get('/projects/{project}', 'ProjectController@show')->middleware('verified');
-Route::get('/projects/{project}/edit', 'ProjectController@edit')->middleware('verified');
+Route::get('/projects/{project}', 'ProjectController@show');
+Route::get('/projects/{project}/edit', 'ProjectController@edit');
+Route::get('/create-new-project', 'ProjectController@create_without_register');
+Route::post('/create-new-project', 'ProjectController@store_create_without_register');
 
 Route::patch('/projects/{project}', 'ProjectController@update');
 
 Route::post('/contact-us', 'ProjectController@contact');
+
 Route::get('locale/{locale}', function($locale){
     Session::put('locale', $locale);
     return redirect()->back();
 });
-
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

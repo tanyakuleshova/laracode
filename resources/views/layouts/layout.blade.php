@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140412765-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140412765-1');
+    </script>
+
     <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content= "@lang('seo.keywords')" />
+    <meta name="description" content="@lang('seo.description')">
+    <meta name="author" content="Laracode">
 
     <!-- Favicons
         ================================================== -->
@@ -24,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href= {{ asset('css/style.css') }}>
     <link rel="stylesheet" type="text/css" href= {{ asset('css/nivo-lightbox/nivo-lightbox.css') }} >
     <link rel="stylesheet" type="text/css" href= {{ asset('css/nivo-lightbox/default.css') }} >
+    <link rel="stylesheet" type="text/css" href= {{ asset('css/flexslider.css') }} >
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
@@ -84,6 +95,8 @@
 <script type="text/javascript" src= {{ asset('js/nivo-lightbox.js') }} ></script>
 <script type="text/javascript" src= {{ asset('js/jqBootstrapValidation.js') }} ></script>
 {{--<script type="text/javascript" src= {{ asset('js/contact_me.js') }} ></script>--}}
+
+<script type="text/javascript" src= {{ asset('js/jquery.flexslider-min.js') }} ></script>
 <script type="text/javascript" src= {{ asset('js/main.js') }} ></script>
 </body>
 </html>

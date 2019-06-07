@@ -47,6 +47,9 @@
                             <input type="submit" class="button-primary margin-top" value="@lang('auth.Login')">
                         </div>
                     </form>
+                    <div class="row justify-content-center">
+                        <a href="/register">@lang('auth.Register')</a>
+                    </div>
                 </div>
             </div>
         </div>

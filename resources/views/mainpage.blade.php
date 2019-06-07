@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Laracode')
+@section('title', \Lang::get('seo.title'))
 
 @section('content')
     {{--@if (session('message_mail_sent'))--}}
@@ -16,7 +16,7 @@
                         <div class="header-title">Laracode</div>
                         <div class="header-title">Space</div>
                         <p>@lang('main.header-par')</p>
-                        <a href="{{ config('app.url') }}/projects/create" class="btn btn-custom btn-lg page-scroll">@lang('main.header-btn')</a> </div>
+                        <a href="{{ config('app.url') }}/create-new-project" class="btn btn-custom btn-lg page-scroll">@lang('main.header-btn')</a> </div>
                 </div>
             </div>
         </div>
@@ -52,7 +52,21 @@
 <div id="about">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-6"> <img src="img/about.jpg" class="img-responsive" alt=""> </div>
+            <div class="col-xs-12 col-md-6">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div style="background-image: url('{{ asset('img/working-office.jpg') }}'); width: 100%; height: 433px;" class="about-img"></div>
+                    </li>
+                    <li>
+                        <div style="background-image: url('{{ asset('img/home-office.jpg') }}'); width: 100%; height: 433px;" class="about-img"></div>
+                    </li>
+                    <li>
+                        <div style="background-image: url('{{ asset('img/programming.jpg') }}'); width: 100%; height: 433px;" class="about-img"></div>
+                    </li>
+                </ul>
+            </div>
+            </div>
             <div class="col-xs-12 col-md-6">
                 <div class="about-text">
                     <h2>@lang('main.about-title')</h2>
@@ -121,61 +135,88 @@
             <div class="portfolio-items">
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="portfolio-item">
-                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-1.jpg') }}" title="" data-lightbox-gallery="gallery1">
+                        <div class="hover-bg">
+                            <a href="https://dfleur.laracode.space/">
                                 <div class="hover-text">
                                     <h4>@lang('main.gallery-project-title')</h4>
                                 </div>
-                                <img src="{{ asset('img/portfolio/project-1.jpg') }}" class="img-responsive" alt="Project Title"> </a> </div>
+                                <div class="portfolio-img" style="background-image: url('{{ asset('img/portfolio/dfleur.png') }}'); width: 100%; height: 218px;"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="portfolio-item">
-                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-2.png') }}" title="" data-lightbox-gallery="gallery1">
+                        <div class="hover-bg">
+                            <a href="https://whitesound.laracode.space/">
                                 <div class="hover-text">
                                     <h4>@lang('main.gallery-project-title')</h4>
                                 </div>
-                                <img src="{{ asset('img/portfolio/project-2.png') }}" class="img-responsive" alt=""> </a> </div>
+                                <div class="portfolio-img" style="background-image: url('{{ asset('img/portfolio/ws.png') }}'); width: 100%; height: 218px;"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="portfolio-item">
-                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-3.jpg') }}" title="" data-lightbox-gallery="gallery1">
+                        <div class="hover-bg">
+                            <a href="https://karma.laracode.space/">
                                 <div class="hover-text">
                                     <h4>@lang('main.gallery-project-title')</h4>
                                 </div>
-                                <img src="{{ asset('img/portfolio/project-3.jpg') }}" class="img-responsive" alt=""> </a> </div>
+                                <div class="portfolio-img" style="background-image: url('{{ asset('img/portfolio/karma.png') }}'); width: 100%; height: 218px;"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="portfolio-item">
-                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-4.jpg') }}" title="" data-lightbox-gallery="gallery1">
+                        <div class="hover-bg">
+                            <a href="https://surf.laracode.space/">
                                 <div class="hover-text">
                                     <h4>@lang('main.gallery-project-title')</h4>
                                 </div>
-                                <img src="{{ asset('img/portfolio/project-4.jpg') }}" class="img-responsive" alt=""> </a> </div>
+                                <div class="portfolio-img" style="background-image: url('{{ asset('img/portfolio/surf.png') }}'); width: 100%; height: 218px;"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="portfolio-item">
-                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-5.png') }}" title="" data-lightbox-gallery="gallery1">
+{{--                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-1.jpg') }}" title="" data-lightbox-gallery="gallery1">--}}
+{{--                                <div class="hover-text">--}}
+{{--                                    <h4>@lang('main.gallery-project-title')</h4>--}}
+{{--                                </div>--}}
+{{--                                <img src="{{ asset('img/portfolio/project-1.jpg') }}" class="img-responsive" alt="Project Title"> --}}
+{{--                            --}}
+{{--                            </a> </div>--}}
+
+                        <div class="hover-bg">
+                            <a href="https://catalyst.laracode.space/">
                                 <div class="hover-text">
                                     <h4>@lang('main.gallery-project-title')</h4>
                                 </div>
-                                <img src="{{ asset('img/portfolio/project-5.png') }}" class="img-responsive" alt=""> </a> </div>
+                                <div class="portfolio-img" style="background-image: url('{{ asset('img/portfolio/catalyst.png') }}'); width: 100%; height: 218px;"></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div class="portfolio-item">
-                        <div class="hover-bg"> <a href="{{ asset('img/portfolio/project-6.jpg') }}" title="" data-lightbox-gallery="gallery1">
+                        <div class="hover-bg">
+                            <a href="https://zipper.laracode.space/">
                                 <div class="hover-text">
                                     <h4>@lang('main.gallery-project-title')</h4>
                                 </div>
-                                <img src="{{ asset('img/portfolio/project-6.jpg') }}" class="img-responsive" alt="Project Title"> </a> </div>
-                    </div>
+                                <div class="portfolio-img" style="background-image: url('{{ asset('img/portfolio/zipper.png') }}'); width: 100%; height: 218px;"></div>
+                            </a>
+                        </div>
                 </div>
             </div>
+
         </div>
     </div>
+</div>
 </div>
 <!-- Testimonials Section -->
 {{--<div id="testimonials">--}}
@@ -331,18 +372,18 @@
                 <p><span><i class="fa fa-envelope-o"></i>Email</span> morionstone@gmail.com</p>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="row">
-                <div class="social">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+{{--        <div class="col-md-12">--}}
+{{--            <div class="row">--}}
+{{--                <div class="social">--}}
+{{--                    <ul>--}}
+{{--                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+{{--                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+{{--                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>--}}
+{{--                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </div>
 <!-- Footer Section -->
